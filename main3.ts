@@ -1,14 +1,14 @@
-// Pascal Case when using interfaces
-interface Point {
-    x: number,
-    y: number
+class Point {
+    // adding question marks makes arguments optional
+    // every argument to the right of the first optional argument should be optional as well
+    // this is useful since you can define a single constructor in TypeScript
+    constructor(public x?: number, private y?: number) {
+    }
+    
+    draw () {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
 }
 
-let drawPoint = (point: Point) => {
-    // ...
-}
-
-drawPoint({
-    x: 1,
-    y: 2
-})
+let point = new Point(1, 2);
+point.draw();

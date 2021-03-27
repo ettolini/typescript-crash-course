@@ -1,4 +1,6 @@
-class Point {
+// we can't use this class in another doc if we don't export it
+// we can consider whatever we export as a "module"
+export class Point {
     constructor(private _x?: number, private _y?: number) {
     }
     
@@ -6,6 +8,3 @@ class Point {
         console.log('X: ' + this._x + ', Y: ' + this._y);
     }
 }
-
-let point = new Point(1, 2);
-point.draw();
